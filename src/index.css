@@ -1,0 +1,115 @@
+:root {
+  --primary-color: rgba(175, 47, 47, 0.15);
+  --primary-bg: #f5f5f5;
+  --heading-size: 100px;
+  --default-margin: 10px;
+  --input-size: 24px;
+  --input-placeholder-color: rgba(0, 0, 0, 0.1);
+  --std-spacing-md: 16px;
+  --std-spacing-sm: 8px;
+  --std-spacing-xs: 4px;
+  --input-padding: 16px 16px 16px 60px;
+  --list-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  --border-color: #ededed;
+  --std-color: #4d4d4d;
+  --check-circle-size: 30px;
+
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  background: var(--primary-bg);
+  color: var(--std-color);
+}
+
+.container {
+  width: 768px;
+  margin: 0 auto var(--std-spacing-md) auto;
+  text-align: center;
+}
+
+.heading {
+  color: var(--primary-color);
+  font-size: var(--heading-size);
+  margin: var(--default-margin);
+}
+
+.input {
+  font-size: var(--input-size);
+  padding: var(--input-padding);
+  border: none;
+  outline: none;
+  box-shadow: var(--list-box-shadow);
+  width: 100%;
+}
+
+.input::placeholder {
+  font-style: italic;
+  color: var(--input-placeholder-color);
+}
+
+.list-container {
+  background: var(--white);
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-shadow: var(--list-box-shadow);
+}
+
+.list-container .list-item {
+  padding: var(--std-spacing-md) var(--std-spacing-sm);
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-item .section-left {
+  display: flex;
+  align-items: center;
+}
+
+.list-item .section-left > * {
+  margin-right: var(--std-spacing-sm);
+}
+
+.list-item .check-circle {
+  width: var(--check-circle-size);
+  min-width: var(--check-circle-size);
+  height: var(--check-circle-size);
+  min-height: var(--check-circle-size);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  padding: var(--std-spacing-xs);
+  cursor: pointer;
+}
+
+.check-circle img {
+  width: 100%;
+  height: 100%;
+}
+
+.clear-todo {
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.list-item:hover .clear-todo {
+  visibility: visible;
+}
+
+.api-error {
+  color: brown;
+  margin: var(--std-spacing-md) 0;
+}

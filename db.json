@@ -1,0 +1,14 @@
+{
+  "todos": [
+    {
+      "id": "bdff53ce-3c79-434e-9660-d6f838d6dbe7",
+      "completed": true,
+      "value": "A todo item"
+    },
+    {
+      "id": "66cc2b67-508d-47b7-9c61-649814abf731",
+      "completed": false,
+      "value": "hi"
+    }
+  ]
+}
