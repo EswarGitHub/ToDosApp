@@ -3,7 +3,12 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'terraform version'
+                sh 'terraform destroy && terraform apply'
+            }
+        }
+        stage('deploy') {
+            steps {
+                sh 'yarn deploy'
             }
         }
     }

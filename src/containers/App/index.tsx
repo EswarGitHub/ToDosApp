@@ -12,7 +12,7 @@ const App: React.FC = () => {
     useEffect(() => {
         (async () => {
             try {
-                const response = await axios.get('https://5wwx0i1qcd.execute-api.us-east-2.amazonaws.com/test');
+                const response = await axios.get(`${process.env.REACT_APP_URL}`);
                 if (response.status === 200) {
                     setTodos(response.data);
                 }
@@ -30,7 +30,7 @@ const App: React.FC = () => {
         const newTodo: Todo = { ...t, id: uuid() };
         (async () => {
             try {
-                const response = await axios.post('https://5wwx0i1qcd.execute-api.us-east-2.amazonaws.com/test', newTodo);
+                const response = await axios.post(`${process.env.REACT_APP_URL}`, newTodo);
                 if (response.status === 200) {
                     setTodos([...todos, newTodo]);
                 }
@@ -51,7 +51,7 @@ const App: React.FC = () => {
         (async () => {
             try {
                 const response = await axios.put(
-                    `https://5wwx0i1qcd.execute-api.us-east-2.amazonaws.com/test/${t.id}`,
+                    `${process.env.REACT_APP_URL}/${t.id}`,
                     { ...t, completed: !t.completed }
                     );
                 if (response.status === 200) {
@@ -70,7 +70,7 @@ const App: React.FC = () => {
 
         (async () => {
             try {
-                const response = await axios.delete(`https://5wwx0i1qcd.execute-api.us-east-2.amazonaws.com/test/${t.id}`);
+                const response = await axios.delete(`${process.env.REACT_APP_URL}/${t.id}`);
                 if (response.status === 200) {
                     setTodos(newTodos);
                 }
