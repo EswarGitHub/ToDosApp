@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'terraform destroy && terraform apply'
+                sh 'terraform destroy -auto-approve && terraform apply -auto-approve'
             }
         }
         stage('deploy') {
