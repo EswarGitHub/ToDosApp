@@ -15,6 +15,6 @@ resource "aws_s3_bucket" "todos-bucket528491" {
     error_document = "error.html"
   }
   provisioner "local-exec" {
-    command = "cd .. && REACT_APP_URL=${aws_api_gateway_deployment.ToDosDeployment.invoke_url} yarn build"
+    command = "cd .. && npm install && REACT_APP_URL=${aws_api_gateway_deployment.ToDosDeployment.invoke_url} yarn build"
   }
 }
